@@ -7,6 +7,9 @@ dependencies:
   '@nhost/nextjs':
     specifier: ^1.13.37
     version: 1.13.37(@types/react@18.2.22)(graphql@16.8.1)(next@12.3.1)(react-dom@17.0.2)(react@17.0.2)
+  '@nhost/react':
+    specifier: ^2.0.31
+    version: 2.0.31(@types/react@18.2.22)(graphql@16.8.1)(react-dom@17.0.2)(react@17.0.2)
   autoprefixer:
     specifier: ^10.4.12
     version: 10.4.12(postcss@8.4.17)

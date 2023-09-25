@@ -2,15 +2,20 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useSignUpEmailPassword } from '@nhost/nextjs';
 import Link from 'next/link';
+import { useProviderLink } from "@nhost/nextjs"
 // import Image from 'next/image';
 import Input from '../components/Forms/Input';
 import Spinner from '../components/Forms/Spinner';
+
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const { google } = useProviderLink({ redirectTo: '/dashboard' })
+
 
     const router = useRouter();
 
@@ -46,6 +51,8 @@ const SignUp = () => {
                 {/* <div className="mb-6 flex items-center justify-center w-full">
                     <Image src="/logo.svg" alt="logo" layout="fill" objectFit="contain" />
                 </div> */}
+
+                <a href={google}>Sign in with Google</a>
 
                 {needsEmailVerification ? (
                     <p className="text-center text-gray-700">

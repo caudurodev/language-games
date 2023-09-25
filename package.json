@@ -11,6 +11,7 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "@nhost/nextjs": "^1.13.37",
+    "@nhost/react": "^2.0.31",
     "autoprefixer": "^10.4.12",
     "framer-motion": "6.0.0",
     "graphql": "^16.8.1",
