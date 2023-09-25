@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const ButtonOutline = ({ children }) => {
   return (
@@ -6,7 +6,7 @@ const ButtonOutline = ({ children }) => {
       {" "}
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default ButtonOutline;
+export default ButtonOutline

@@ -14,7 +14,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { google } = useProviderLink({ redirectTo: '/dashboard' })
+    const { google } = useProviderLink({ redirectTo: '/' })
 
 
     const router = useRouter();

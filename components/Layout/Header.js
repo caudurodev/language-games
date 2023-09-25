@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react"
 import Link from "next/link"
 // Import react scroll
 import { Link as LinkScroll } from "react-scroll"
-import ButtonOutline from "../misc/ButtonOutline."
+// import ButtonOutline from "../misc/ButtonOutline."
 import Logo from "../../public/assets/talki-text-logo.svg"
+import { useAuthenticated, useSignOut } from "@nhost/nextjs"
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null)
   const [scrollActive, setScrollActive] = useState(false)
+  const isAuthenticated = useAuthenticated()
+  const { signOut } = useSignOut()
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollActive(window.scrollY > 20)
@@ -101,13 +104,25 @@ const Header = () => {
             </LinkScroll>
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
-            <Link href="/signin">
-              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
-                  Sign In
-              </a>
-            </Link>
-            <Link href="/SignUp">Sign Up</Link>
-            <ButtonOutline></ButtonOutline>
+            {!isAuthenticated ? (
+              <>
+                <Link href="/signin">
+                  <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
+                      Sign In
+                  </a>
+                </Link>
+                <div className="font-medium tracking-wide py-2 px-5 sm:px-8 border border-orange-500 text-orange-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-orange-500 hover:text-white-500 transition-all hover:shadow-orange ">
+                  <Link href="/SignUp">Sign Up</Link>
+                </div>
+              </>
+            ) : (
+              <button
+                onClick={() => signOut()}
+                className="font-medium tracking-wide py-2 px-5 sm:px-8 border border-orange-500 text-orange-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-orange-500 hover:text-white-500 transition-all hover:shadow-orange "
+              >
+                Log Out
+              </button>
+            )}
           </div>
         </nav>
       </header>
