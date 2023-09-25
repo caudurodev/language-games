@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useSignUpEmailPassword } from '@nhost/nextjs';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Input from '../components/Forms/Input';
 import Spinner from '../components/Forms/Spinner';
 
@@ -57,14 +57,14 @@ const SignUp = () => {
                             <Input
                                 placeholder="First name"
                                 value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
+                                onChange={setFirstName}
                                 disabled={disableForm}
                                 required
                             />
                             <Input
                                 placeholder="Last name"
                                 value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
+                                onChange={setLastName}
                                 disabled={disableForm}
                                 required
                             />
@@ -73,22 +73,21 @@ const SignUp = () => {
                             type="email"
                             placeholder="Email address"
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={setEmail}
                             disabled={disableForm}
                             required
                         />
                         <Input
                             type="password"
-                            label="Create password"
                             placeholder="Create password"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={setPassword}
                             disabled={disableForm}
                             required
                         />
 
                         <button type="submit" disabled={disableForm} className="w-full py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-600">
-                            {isLoading ? <Spinner size="sm" /> : 'Create account'}
+                            {isLoading ? <Spinner /> : 'Create account'}
                         </button>
 
                         {isError ? <p className="mt-2 text-red-500">{error?.message}</p> : null}

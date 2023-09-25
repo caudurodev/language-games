@@ -12,6 +12,7 @@ import "../styles/slick.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    // @ts-ignore
     <NhostProvider nhost={nhost} initial={pageProps.nhostSession} >
       <Component {...pageProps} />
     </NhostProvider>
