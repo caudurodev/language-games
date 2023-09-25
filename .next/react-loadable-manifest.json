@@ -1,0 +1,14 @@
+{
+  "../node_modules/.pnpm/next@12.3.1_@babel+core@7.22.20_react-dom@17.0.2_react@17.0.2/node_modules/next/dist/client/index.js -> ../pages/_app": {
+    "id": "../node_modules/.pnpm/next@12.3.1_@babel+core@7.22.20_react-dom@17.0.2_react@17.0.2/node_modules/next/dist/client/index.js -> ../pages/_app",
+    "files": [
+      "static/chunks/node_modules_pnpm_next_12_3_1__babel_core_7_22_20_react-dom_17_0_2_react_17_0_2_node_modules_-57e397.js"
+    ]
+  },
+  "../node_modules/.pnpm/next@12.3.1_@babel+core@7.22.20_react-dom@17.0.2_react@17.0.2/node_modules/next/dist/client/index.js -> ../pages/_error": {
+    "id": "../node_modules/.pnpm/next@12.3.1_@babel+core@7.22.20_react-dom@17.0.2_react@17.0.2/node_modules/next/dist/client/index.js -> ../pages/_error",
+    "files": [
+      "static/chunks/node_modules_pnpm_next_12_3_1__babel_core_7_22_20_react-dom_17_0_2_react_17_0_2_node_modules_-268842.js"
+    ]
+  }
+}
