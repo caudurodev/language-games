@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react"
+import Link from "next/link"
 // Import react scroll
-import { Link as LinkScroll } from "react-scroll";
-import ButtonOutline from "../misc/ButtonOutline.";
-import LogoVPN from "../../public/assets/Logo.svg";
+import { Link as LinkScroll } from "react-scroll"
+import ButtonOutline from "../misc/ButtonOutline."
+import Logo from "../../public/assets/talki-text-logo.svg"
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState(null);
-  const [scrollActive, setScrollActive] = useState(false);
+  const [activeLink, setActiveLink] = useState(null)
+  const [scrollActive, setScrollActive] = useState(false)
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScrollActive(window.scrollY > 20);
-    });
-  }, []);
+      setScrollActive(window.scrollY > 20)
+    })
+  }, [])
   return (
     <>
       <header
@@ -23,7 +23,8 @@ const Header = () => {
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
           <div className="col-start-1 col-end-2 flex items-center">
-            <LogoVPN className="h-8 w-auto" />
+            <Logo className="h-8 w-auto" />{" "}
+            <b className="ml-3 text-2xl text-bg-purple-900">TalkiText</b>
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
             <LinkScroll
@@ -33,7 +34,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("about");
+                setActiveLink("about")
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
@@ -51,7 +52,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("feature");
+                setActiveLink("feature")
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
@@ -60,7 +61,7 @@ const Header = () => {
                   : " text-black-500 hover:text-orange-500 ")
               }
             >
-              Feature
+              Features
             </LinkScroll>
             <LinkScroll
               activeClass="active"
@@ -69,7 +70,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("pricing");
+                setActiveLink("pricing")
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
@@ -87,7 +88,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("testimoni");
+                setActiveLink("testimoni")
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
@@ -96,7 +97,7 @@ const Header = () => {
                   : " text-black-500 hover:text-orange-500 ")
               }
             >
-              Testimonial
+              Testimonials
             </LinkScroll>
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
@@ -121,7 +122,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("about");
+                setActiveLink("about")
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
@@ -153,7 +154,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("feature");
+                setActiveLink("feature")
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
@@ -185,7 +186,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("pricing");
+                setActiveLink("pricing")
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
@@ -217,7 +218,7 @@ const Header = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("testimoni");
+                setActiveLink("testimoni")
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
@@ -247,7 +248,7 @@ const Header = () => {
       </nav>
       {/* End Mobile Navigation */}
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
